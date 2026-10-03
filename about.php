@@ -1,0 +1,3 @@
+<?php require 'data.php'; $pageTitle = 'Merksについて｜日本のファッション通販'; require 'header.php'; ?>
+<main class="policy-page"><div class="eyebrow">ABOUT US</div><h1>Merksについて</h1><p>Merksは、毎日の装いに取り入れやすいレディース・メンズウェアをお届けするオンラインストアです。ワンピース、トップス、ニット、デニム、パンツ、アウターなど、季節に合わせたアイテムを揃えています。</p><p>商品情報や価格をわかりやすくお伝えし、安心してお買い物いただけるサービスを目指しています。全商品30% OFF、全国送料無料でお届けします。</p><p>商品やご注文については、<a href="<?= htmlspecialchars($business['support_phone_href']) ?>">電話 <?= htmlspecialchars($business['support_phone_display']) ?></a>または<a href="mailto:<?= htmlspecialchars($business['support_email']) ?>">メール</a>でお問い合わせください。</p></main>
+<?php require 'footer.php'; ?>

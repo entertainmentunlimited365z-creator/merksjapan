@@ -1,0 +1,12 @@
+const MerksCart = {
+  key: 'merks-cart',
+  yen(value) { return `¥${new Intl.NumberFormat('ja-JP').format(value)}`; },
+  get() { try { return JSON.parse(localStorage.getItem(this.key) || '[]'); } catch { return []; } },
+  save(cart) { localStorage.setItem(this.key, JSON.stringify(cart)); this.updateCount(); },
+  add(slug, options = {}) { const cart = this.get(); const item = cart.find(entry => entry.slug === slug && entry.colour === options.colour && entry.size === options.size); item ? item.qty++ : cart.push({slug, qty: 1, ...options}); this.save(cart); alert('カートに追加しました。'); this.render(); },
+  buyNow(slug, options = {}) { this.add(slug, options); window.location.href = 'cart.php'; },
+  updateCount() { const count = this.get().reduce((sum, item) => sum + item.qty, 0); const target = document.querySelector('#cart-count'); if (target) target.textContent = count; },
+  render() { const target = document.querySelector('#cart-items'); if (!target) return; const cart = this.get(); if (!cart.length) { target.innerHTML = '<p class="empty">カートは空です。<a href="index.php">商品を見る</a></p>'; document.querySelector('#cart-total').textContent = ''; const paypal = document.querySelector('#paypal-button-container'); if (paypal) paypal.innerHTML = ''; const message = document.querySelector('#paypal-message'); if (message) message.textContent = ''; return; } target.innerHTML = cart.map((item, index) => { const product = window.MERKS_PRODUCTS[item.slug]; if (!product) return ''; const options = [item.colour, item.size].filter(Boolean).join(' ・ '); return `<div class="cart-row"><img src="${product.image}" alt="${product.name}"><div><b>${product.name}</b><p>${product.category}${options ? ` ・ ${options}` : ''}</p><p class="shipping-label">送料無料 ・ 30% OFF</p><button onclick="MerksCart.remove(${index})">削除</button></div><div class="cart-row-price"><del>${this.yen(product.price)}</del><b>${this.yen(product.sale_price)} × ${item.qty} = ${this.yen(product.sale_price * item.qty)}</b></div></div>`; }).join(''); const total = cart.reduce((sum, item) => sum + ((window.MERKS_PRODUCTS[item.slug]?.sale_price || 0) * item.qty), 0); document.querySelector('#cart-total').textContent = `合計（税込）: ${this.yen(total)}　｜　全国送料無料`; if (window.MerksPayPal) window.MerksPayPal.render(cart); },
+  remove(index) { const cart = this.get(); cart.splice(index, 1); this.save(cart); this.render(); }
+};
+MerksCart.updateCount(); MerksCart.render();

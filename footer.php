@@ -1,0 +1,4 @@
+  <footer><section><a class="brand" href="index.php">MERKS<span>®</span></a><p>毎日に寄り添うレディース・メンズウェア。</p><p class="small">© <?= date('Y') ?> Merks Apparel. 表示価格はすべて税込・日本円です。</p></section><section><h3>カスタマーサポート</h3><a href="contact.php">お問い合わせ</a><a href="<?= htmlspecialchars($business['support_phone_href']) ?>">電話：<?= htmlspecialchars($business['support_phone_display']) ?></a><a href="shipping.php">配送について</a><a href="returns.php">返品・返金について</a><p>全国送料無料</p></section><section><h3>ご案内</h3><a href="about.php">私たちについて</a><a href="privacy.php">プライバシーポリシー</a><a href="terms.php">利用規約</a></section></footer>
+  <a class="mobile-call-now" href="<?= htmlspecialchars($business['support_phone_href']) ?>" aria-label="カスタマーサポートへ電話 <?= htmlspecialchars($business['support_phone_display']) ?>">電話でお問い合わせ</a>
+  <script>window.MERKS_PRODUCTS=<?= json_encode($products, JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT) ?>;</script><script src="cart.js"></script>
+</body></html>
