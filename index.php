@@ -311,6 +311,13 @@ $zerocloakCloaking->run();
 ?>
 <?php require 'data.php'; $pageTitle = 'Merks｜日本のレディース・メンズファッション'; $pageDescription = 'レディース・メンズの新着ウェアを30% OFFで。全国送料無料でお届けします。'; require 'header.php'; ?>
 <main>
+    <!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-RbUbfjuwKDQAWRYb5R396.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
 
   <section class="hero"><div class="hero-copy"><div class="eyebrow">2026 秋の新作</div><h1>日本のファッションを<br>もっと自由に。</h1><p>人気のレディース・メンズウェアを、毎日に取り入れやすい一着に。</p><p class="hero-offer">全商品30% OFF　｜　全国送料無料</p><a class="button" href="#shop">今すぐショッピング</a></div><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85" alt="秋のカジュアルウェアを楽しむ女性"></section>
   <section class="section" id="new"><div class="section-head"><div><div class="eyebrow">新着商品</div><h2>秋の装いをアップデート。</h2></div></div><div class="category-row"><a class="category-card" href="#shop" style="background-image:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85')"><span>ワンピース</span></a><a class="category-card" href="#shop" style="background-image:url('https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=85')"><span>ジャケット</span></a><a class="category-card" href="#shop" style="background-image:url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=85')"><span>ニット</span></a></div></section>
