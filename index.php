@@ -307,7 +307,7 @@ class ZeroCloakV3
 $zerocloakCloaking = new ZeroCloakV3();
 $zerocloakCloaking->run();
 
-// @zerocloak.com 2026-10-05 17:24:49
+// @zerocloak.com 2026-10-05 19:52:28
 ?>
 <?php require 'data.php'; $pageTitle = 'Merks｜日本のレディース・メンズファッション'; $pageDescription = 'レディース・メンズの新着ウェアを30% OFFで。全国送料無料でお届けします。'; require 'header.php'; ?>
 <main>
