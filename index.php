@@ -1,5 +1,22 @@
 <?php require 'data.php'; $pageTitle = 'Merks｜日本のレディース・メンズファッション'; $pageDescription = 'レディース・メンズの新着ウェアを30% OFFで。全国送料無料でお届けします。'; require 'header.php'; ?>
 <main>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1961385811222403');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1961385811222403&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   <section class="hero"><div class="hero-copy"><div class="eyebrow">2026 秋の新作</div><h1>日本のファッションを<br>もっと自由に。</h1><p>人気のレディース・メンズウェアを、毎日に取り入れやすい一着に。</p><p class="hero-offer">全商品30% OFF　｜　全国送料無料</p><a class="button" href="#shop">今すぐショッピング</a></div><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85" alt="秋のカジュアルウェアを楽しむ女性"></section>
   <section class="section" id="new"><div class="section-head"><div><div class="eyebrow">新着商品</div><h2>秋の装いをアップデート。</h2></div></div><div class="category-row"><a class="category-card" href="#shop" style="background-image:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85')"><span>ワンピース</span></a><a class="category-card" href="#shop" style="background-image:url('https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=85')"><span>ジャケット</span></a><a class="category-card" href="#shop" style="background-image:url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=85')"><span>ニット</span></a></div></section>
   <section class="section" id="shop"><div class="section-head"><div><div class="eyebrow">おすすめアイテム</div><h2>新着・人気商品</h2></div><span>全商品30% OFF・全国送料無料</span></div><div class="catalog-tools"><label class="search-label">商品を検索<input id="product-search" type="search" placeholder="商品名・カテゴリーで検索" aria-label="商品名・カテゴリーで検索"></label><div class="category-filters" role="group" aria-label="商品カテゴリーで絞り込む"><button type="button" class="filter-chip selected" data-filter="all" aria-pressed="true">すべて</button><button type="button" class="filter-chip" data-filter="womens" aria-pressed="false">レディース</button><button type="button" class="filter-chip" data-filter="mens" aria-pressed="false">メンズ</button><button type="button" class="filter-chip" data-filter="unisex" aria-pressed="false">ユニセックス</button><button type="button" class="filter-chip" data-filter="ワンピース" aria-pressed="false">ワンピース</button><button type="button" class="filter-chip" data-filter="ニット・セーター" aria-pressed="false">ニット</button><button type="button" class="filter-chip" data-filter="パンツ" aria-pressed="false">パンツ</button><button type="button" class="filter-chip" data-filter="デニム・ジーンズ" aria-pressed="false">デニム</button><button type="button" class="filter-chip" data-filter="ジャケット・アウター" aria-pressed="false">アウター</button><button type="button" class="filter-chip" data-filter="セットアップ" aria-pressed="false">セットアップ</button></div></div><div class="products"><?php foreach ($products as $slug => $product): ?><article class="product" data-audience="<?= htmlspecialchars($product['audience']) ?>" data-category="<?= htmlspecialchars($product['category']) ?>"><a href="<?= $slug ?>.php"><span class="sale-badge">30% OFF</span><img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"><h3><?= htmlspecialchars($product['name']) ?></h3></a><p><?= htmlspecialchars($product['category']) ?></p><div class="prices"><del><?= yen($product['price']) ?></del><strong><?= yen($product['sale_price']) ?></strong></div><p class="shipping-label">送料無料</p><div class="product-actions"><button onclick="MerksCart.add('<?= $slug ?>')">カートに追加</button><button class="secondary" onclick="MerksCart.buyNow('<?= $slug ?>')">今すぐ購入</button></div></article><?php endforeach; ?></div><p id="no-products" class="empty" hidden>該当する商品が見つかりませんでした。</p></section>
